@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [[ $1 != f ]]
+echo $1
+
+if [[ $1 != gg ]]
 then
     echo "not reb"
     cp ./build/compile_commands.json ./compile_commands.json 
@@ -8,7 +10,7 @@ then
     ./build/p1
 fi
 
-if [[ [$1 || $2] = f ]]
+if [[ $1  = "f " || $2 = "f" ]]
 then
     echo "rebuilding"
     rm -r build

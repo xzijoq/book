@@ -1,0 +1,25 @@
+[
+{
+  "directory": "/home/qq/cpp/book/build",
+  "command": "/usr/bin/c++   -I.././include -I../src/gui/include -I/usr/include/SDL2  -Weverything -g  -Wall -Wno-c++98-compat -Wno-c++98-compat-pedantic   -o CMakeFiles/p1.dir/main.cpp.o -c /home/qq/cpp/book/main.cpp",
+  "file": "/home/qq/cpp/book/main.cpp"
+},
+
+{
+  "directory": "/home/qq/cpp/book/build",
+  "command": "/usr/bin/c++    -Weverything -g  -Wall -Wno-c++98-compat -Wno-c++98-compat-pedantic   -o src/part1/CMakeFiles/one.dir/one.cpp.o -c /home/qq/cpp/book/src/part1/one.cpp",
+  "file": "/home/qq/cpp/book/src/part1/one.cpp"
+},
+
+{
+  "directory": "/home/qq/cpp/book/build",
+  "command": "/usr/bin/c++   -I../src/gui/./include -I../src/gui/include -I/usr/include/SDL2  -Wall -g   -o src/gui/CMakeFiles/gui.dir/gui.cpp.o -c /home/qq/cpp/book/src/gui/gui.cpp",
+  "file": "/home/qq/cpp/book/src/gui/gui.cpp"
+},
+
+{
+  "directory": "/home/qq/cpp/book/build",
+  "command": "/usr/bin/cc  -I../src/gui/./include -I../src/gui/include -I/usr/include/SDL2    -o src/gui/CMakeFiles/gui.dir/src/glad.c.o   -c /home/qq/cpp/book/src/gui/src/glad.c",
+  "file": "/home/qq/cpp/book/src/gui/src/glad.c"
+}
+]

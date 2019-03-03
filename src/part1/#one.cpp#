@@ -1,0 +1,11 @@
+#include "one.h"
+#inc
+void one()
+{
+  int ret{-1}, a1{-1}, a2{-1};
+
+  ret = one1( a1, a2 );
+  std::cout << "yo " << ret;
+
+}
+

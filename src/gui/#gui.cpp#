@@ -1,0 +1,74 @@
+#include <SDL2/SDL.h>
+#include <cstdio>
+#include <glm/glm.hpp>
+#include <iostream>
+#include "glad/glad.h"
+
+const int    SCREEN_WIDTH = 640;
+const int    SCREEN_HEIGHT = 480;
+SDL_Window*  window = NULL;
+SDL_Surface* screenSurface;
+SDL_Surface* yo;
+bool         initSDL();
+bool         loadMedia();
+void         closeSDL();
+/*
+according to tutorial at
+ http://lazyfoo.net/tutorials/SDL/01_hello_SDL/index2.php sdl2 requires main
+ of the type --int main( int argc, char* args[] )-- for portability however it
+ is working fine for now
+*/
+int main1()
+{
+  // bool ret;
+  initSDL();
+  
+  SDL_BlitSurface(yo,NULL,screenSurface,NULL);
+  SDL_UpdateWindowSurface(window);
+  //  SDL_Delay(2000);
+  
+  closeSDL();
+  return 0;
+}
+
+bool initSDL()
+{  // Initialize SDL
+  if ( SDL_Init( SDL_INIT_VIDEO ) < 0 )
+  {
+    printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
+    return false;
+  }
+  else
+  {
+    // Create window
+    window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED,
+                               SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
+                               SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    if ( window == NULL )
+    {
+      printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
+    }
+    else
+    {
+      // Get window surface
+      screenSurface = SDL_GetWindowSurface( window );
+    }
+  }
+  return true;
+}
+bool loadMedia()
+{
+  yo = SDL_LoadBMP( "./res/yo1.bmp" );
+  if ( yo == NULL )
+  {
+    printf( "can't load image PERIOD %s\n", SDL_GetError() );
+  }
+  return true;
+}
+void closeSDL()
+{printf("hi there closing sdl\n");
+  SDL_FreeSurface( yo );
+  SDL_DestroyWindow( window );
+  window = NULL;  // realy have to it manually
+  SDL_Quit();
+}
